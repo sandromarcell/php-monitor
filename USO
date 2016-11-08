@@ -11,5 +11,5 @@ define('INTERVALO', 60 * 1000);
 4 - Defina o dono e as permissões de acordo com o usuário que executa o daemon do seu servidor web:
 
 chown -R apache:apache <DIRETÓRIO WEB>/ping-status/
-find <DIRETÓRIO WEB>/ping-status/ -type d -exec chmod -R 755 {} \;
-find <DIRETÓRIO WEB>/ping-status/ -type f -exec chmod -R 644 {} \;
+find <DIRETÓRIO WEB>/monitor/ -type d -exec chmod -R 755 {} \;
+find <DIRETÓRIO WEB>/monitor/ -type f -exec chmod -R 644 {} \;
