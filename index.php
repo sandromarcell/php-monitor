@@ -27,26 +27,19 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 	<meta name="author" content="Sandro Marcell" />
 	<meta name="generator" content="Geany 1.24.1" />
-	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />	
 	<link rel="stylesheet" type="text/css" href="css/styles.css" />
 	<link rel="icon" type="image/x-icon" href="imagens/favicon.ico" />
 	<script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function() {
+			var status, destaque, conteudo, indices;
 			<?php
 			require 'include/config.inc.php';
 			echo 'var intervalo = ' . INTERVALO . ';';
 			?>
 
-			$(function() { atualizarTabela(); });
-
-			function atualizarTabela() {
+			(function atualizarTabela() {
 				function montarTabela(data) {
-					var status;
-					var destaque;
-					var conteudo;
-					var indices = data.length;
-
 					conteudo = '<tr class="titulo">';
 					conteudo += '<td class="oculto"></td>';
 					conteudo += '<td colspan="4">MONITOR DE STATUS</td>';
@@ -59,6 +52,7 @@
 					conteudo += '<td>&Uacute;ltima atualiza&ccedil;&atilde;o</td>';
 					conteudo += '</tr>';
 
+					indices = data.length;
 					for (var i = 0; i < indices; i++) {
 						status = 'online';
 						destaque = null;
@@ -78,7 +72,6 @@
 					}
 
 					$('.carregando').hide();
-
 					$('#tbl').html(conteudo).trigger('update');
 
 					$('#tbl').on('update', function() { // Alarme sonoro
@@ -99,8 +92,9 @@
 					dataType: 'json',
 					success: montarTabela
 				});
-			}
-			setInterval(atualizarTabela, intervalo);
+
+				setTimeout(atualizarTabela, intervalo);
+			})();
 		});
 
 		$(window).load(function() { // Efeito "blink"
