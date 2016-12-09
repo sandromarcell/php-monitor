@@ -27,13 +27,13 @@ Instalação
 3) Defina o dono e as permissões de acordo com o usuário que executa o daemon do seu servidor web
 
 * Utilizando o usuário "apache" como exemplo:
-chown -R apache:apache <DIRETÓRIO WEB>/php-bwm/
-find <DIRETÓRIO WEB>/php-bwm/ -type d -exec chmod -R 755 {} \;
-find <DIRETÓRIO WEB>/php-bwm/ -type f -exec chmod -R 644 {} \;
+chown -R apache:apache <DIRETÓRIO WEB>/monitor/
+find <DIRETÓRIO WEB>/monitor/ -type d -exec chmod -R 755 {} \;
+find <DIRETÓRIO WEB>/monitor/ -type f -exec chmod -R 644 {} \;
 
 Projetos
 --------
-Para saber mais sobre os meus projetos, acesse a minha conta no Github: https://github.com/SandroMarcell
+Para saber mais sobre os meus projetos, acesse meu repositório no Github: https://github.com/SandroMarcell
 
 Dúvidas
 -------
