@@ -22,7 +22,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 
 <head>
-	<title>Monitor de status</title>
+	<title>php-monitor</title>
 	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 	<meta name="author" content="Sandro Marcell" />
@@ -40,6 +40,7 @@
 
 			(function atualizarTabela() {
 				function montarTabela(data) {
+					indices = data.length;
 					conteudo = '<tr class="titulo">';
 					conteudo += '<td class="oculto"></td>';
 					conteudo += '<td colspan="4">MONITOR DE STATUS</td>';
@@ -51,8 +52,7 @@
 					conteudo += '<td>Tempo de resposta</td>';
 					conteudo += '<td>&Uacute;ltima atualiza&ccedil;&atilde;o</td>';
 					conteudo += '</tr>';
-
-					indices = data.length;
+					
 					for (var i = 0; i < indices; i++) {
 						status = 'online';
 						destaque = null;
@@ -111,7 +111,7 @@
 		<table id="tbl"></table>
 	</div>
 	<div class="rodape">
-		<strong>Monitor de status</strong> &copy; 2016 <a href="mailto:smarcell@mail.com">Sandro Marcell</a><br />
+		php-monitor &copy; 2016 <a href="mailto:smarcell@mail.com">Sandro Marcell</a><br />
 		<?php
 		setlocale(LC_TIME, 'pt_BR.UTF-8');
 		echo '<span class="data">' . strftime('%a, %d de %B de %Y', strtotime('today')) . '</span>';
