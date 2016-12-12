@@ -6,7 +6,7 @@ Você é livre para modificar, melhorar ou otimizar este programa, mas peço gen
 
 Sobre
 -----
-Simples projeto que utiliza a dupla "PHP + jQuery" para construir um sistema que monitora o status de servidores, domínios, etc... retornando alertas visuais e auditivos caso alguns dos serviços monitorados apresente algum tipo de falha.
+O php-monitor é um simples projeto que utiliza a dupla "PHP + jQuery" para construir um sistema que monitora o status de servidores, domínios, etc... retornando alertas visuais e auditivos caso alguns dos serviços monitorados apresente algum tipo de falha.
 
 Desenvolvimento
 ---------------
@@ -27,9 +27,11 @@ Instalação
 3) Defina o dono e as permissões de acordo com o usuário que executa o daemon do seu servidor web
 
 * Utilizando o usuário "apache" como exemplo:
-chown -R apache:apache <DIRETÓRIO WEB>/monitor/
-find <DIRETÓRIO WEB>/monitor/ -type d -exec chmod -R 755 {} \;
-find <DIRETÓRIO WEB>/monitor/ -type f -exec chmod -R 644 {} \;
+chown -R apache:apache <DIRETÓRIO WEB>/php-monitor/
+find <DIRETÓRIO WEB>/php-monitor/ -type d -exec chmod -R 755 {} \;
+find <DIRETÓRIO WEB>/php-monitor/ -type f -exec chmod -R 644 {} \;
+
+4) Finalmente acesse o "php-monitor": http://<IP DO SERVIDOR>/php-monitor/
 
 Projetos
 --------
