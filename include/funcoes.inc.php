@@ -72,19 +72,15 @@ function checarHost($host, $porta = NULL, $timeout = 3) {
 		return FALSE;
 	}
 
-	/* !! Esta implementacao via "exec" e compativel somente com sistemas Unix-like !! */
-	if (PHP_OS === 'FreeBSD')
-		$string = 'ping -c 1 -t 1 ' . escapeshellcmd($host);
-	else
-		$string = 'ping -c 1 -w 1 ' . escapeshellcmd($host); /* Linux/NetBSD/OpenBSD ping sintaxe */
-
-	exec($string, $saida, $retorno);
-
+	/* !! Esta implementacao via "exec" foi testada somente em sistemas Linux !! */	
+	$ping = 'ping -n -U -i 0.2 -c 5 -W 1 ' . escapeshellcmd($host);
+	exec($ping, $saida, $retorno);
 	$saida = array_values(array_filter($saida));
+	$rtt = array_slice($saida, -1)[0];
 
-	if (!empty($saida[1])) {
-		$t_resp = preg_match('/time\=([\d\.]+)\sms/', $saida[1], $padrao);
-		if ($t_resp > 0)
+	if (!empty($rtt)) {
+		$temp_resp = preg_match('/rtt min\/avg\/max\/mdev = [\d\.]+\/([\d\.]+)\/[\d\.]+\/[\d\.]+\sms/', $rtt, $padrao);
+		if ($temp_resp > 0)
 			return(round($padrao[1]));
 	}
 
