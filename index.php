@@ -32,7 +32,7 @@
 	<script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function() {
-			var status, destaque, conteudo, indices;
+			var status, destaque, conteudo, indices, unidade;
 			<?php
 			require 'include/config.inc.php';
 			echo 'var intervalo = ' . INTERVALO . ';';
@@ -41,7 +41,6 @@
 
 			(function atualizarTabela() {
 				function montarTabela(data) {
-					var conteudo, indices, status, destaque, unidade;
 					indices = data.length;
 
 					conteudo = '<tr class="titulo">';
