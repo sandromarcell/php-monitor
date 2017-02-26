@@ -19,8 +19,14 @@
  * MA 02110-1301, USA.
  */
 
-/* Intervalo de atualizacao das informacoes na pagina index (padrao 1 minuto) */
-define('INTERVALO', 60 * 1000);
+/* Intervalo de atualizacao das informacoes na pagina index (padrao 1 minuto e meio) */
+define('INTERVALO', 60 * 1500);
+
+/*
+ * Valor com a maior latencia permitida antes de exibir o status como "warning"
+ * (padrao 100ms)
+ */
+define('ATENCAO', 100);
 
 /* 
  * Hosts que serao monitorados
