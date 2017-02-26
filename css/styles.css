@@ -23,7 +23,7 @@ body {
 	font-family: Arial, sans-serif;
 	font-size: 12pt;
 	line-height: 150%;
-	background: #000;
+	background: #000000;
 }
 
 table {
@@ -37,12 +37,12 @@ table {
 td {
 	width: 200px;
 	padding: 8px;
-	background: #fff;
+	background: #f9f9f9;
 	text-align: center;
 }
 
 a:link, a:hover, a:active {
-	color: #fff;
+	color: #ffffff;
 }
 
 .negrito { font-weight: bold; }
@@ -59,52 +59,59 @@ a:link, a:hover, a:active {
 }
 
 .online {
-	color: #fff;
+	color: #ffffff;
 	background-color: #5cb85c;
 	border-color: #4cae4c;
 	font-weight: bold;
 }
 
 .offline {
-	color: #fff;
+	color: #ffffff;
 	background-color: #d9534f;
 	border-color: #d43f3a;
 	font-weight: bold;
 }
 
+.warning {
+	color: #ffffff;
+	background-color: #f0ad4e;
+	border-color: #f0ad4e;
+	font-weight: bold;
+}
+
 .titulo td {
-	color: #fff;
+	color: #ffffff;
 	background-color: #5bc0de;
 	border-color: #46b8da;
 	font-weight: bold;
 }
 
 .titulo .oculto {
-	color: #000;
+	color: #000000;
 	background: none;
 }
 
 .info td {
-	color: #fff;
+	color: #ffffff;
 	background-color: #428bca;
 	border-color: #357ebd;
 	font-weight: bold;
 }
 
 .info .oculto {
-	color: #000;
+	color: #000000;
 	background: none;
 }
 
 .rodape {
 	font-size: 8pt;
-	color: #fff;
+	color: #ffffff;
 	text-align: center;
 }
 
 .data {
 	font-size: 10pt;
-	color: #fff;
+	color: #ffffff;
 	text-align: center;
 }
 
