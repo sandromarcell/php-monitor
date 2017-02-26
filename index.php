@@ -36,11 +36,14 @@
 			<?php
 			require 'include/config.inc.php';
 			echo 'var intervalo = ' . INTERVALO . ';';
+			echo 'var latencia_alta = ' . ATENCAO . ';';
 			?>
 
 			(function atualizarTabela() {
 				function montarTabela(data) {
+					var conteudo, indices, status, destaque, unidade;
 					indices = data.length;
+
 					conteudo = '<tr class="titulo">';
 					conteudo += '<td class="oculto"></td>';
 					conteudo += '<td colspan="4">MONITOR DE STATUS</td>';
@@ -52,21 +55,26 @@
 					conteudo += '<td>Tempo de resposta</td>';
 					conteudo += '<td>&Uacute;ltima atualiza&ccedil;&atilde;o</td>';
 					conteudo += '</tr>';
-					
+
 					for (var i = 0; i < indices; i++) {
 						status = 'online';
-						destaque = null;
+						destaque = '';
+						unidade = 'ms';
+
+						if (data[i]['Tempo de resposta'] >= latencia_alta) 
+							status = 'warning';
 
 						if (data[i].Status === 'OFFLINE') {
 							status = 'offline';
 							destaque = 'negrito';
+							unidade = '';
 						}
 
 						conteudo += '<tr>';
 						conteudo += '<td class="' + status + '">' + data[i].Status + '</td>';
 						conteudo += '<td class="' + destaque + '">' + data[i].Host + '</td>';
 						conteudo += '<td class="' + destaque + '">' + data[i].IP + '</td>';
-						conteudo += '<td class="' + destaque + '">' + data[i]['Tempo de resposta'] + '</td>';
+						conteudo += '<td class="' + destaque + '">' + data[i]['Tempo de resposta'] + unidade + '</td>';
 						conteudo += '<td class="' + destaque + '">' + data[i]['&Uacute;ltima atualiza&ccedil;&atilde;o'] + '</td>';
 						conteudo += '</tr>';
 					}
