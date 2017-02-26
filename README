@@ -12,7 +12,7 @@ Desenvolvimento
 ---------------
 Este projeto foi desenvolvido e testado no seguinte ambiente:
 
-- FreeBSD 10.3-STABLE
+- Linux 3.16.0-4-amd64 #1 SMP - Debian 3.16.36-1+deb8u2 (2016-10-19)
 - PHP 5.6.22
 - Apache 2.4.20
 - jQuery 2.2.3
