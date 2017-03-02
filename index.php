@@ -112,6 +112,7 @@
 		});
 	</script>
 </head>
+<?php flush(); ?>
 <body>
 	<div class="carregando"></div>
 	<div>
