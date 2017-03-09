@@ -40,7 +40,7 @@ for ($i = 0; $i < $indices; $i++) {
 			'Status' => 'OFFLINE',
 			'Host' => $hosts[$i]['desc'],
 			'IP' => $host,
-			'Tempo de resposta' => 'x',
+			'Lat&ecirc;ncia' => 'x',
 			'&Uacute;ltima atualiza&ccedil;&atilde;o' => $tempo
 		);
 		continue;
@@ -50,7 +50,7 @@ for ($i = 0; $i < $indices; $i++) {
 		'Status' => 'ONLINE',
 		'Host' => $hosts[$i]['desc'],
 		'IP' => $host,
-		'Tempo de resposta' => $t_resp = $latencia <= 1 ? '1' : "$latencia",
+		'Lat&ecirc;ncia' => $t_resp = $latencia <= 1 ? 1 : "$latencia",
 		'&Uacute;ltima atualiza&ccedil;&atilde;o' => $tempo
 	);
 }
