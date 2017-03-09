@@ -73,7 +73,7 @@ function checarHost($host, $porta = NULL, $timeout = 3) {
 	}
 
 	/* !! Esta implementacao via "exec" foi testada somente em sistemas Linux !! */	
-	$ping = 'ping -Q 16 -n -U -i 0.2 -c 5 -W 1 ' . escapeshellcmd($host);
+	$ping = 'ping -n -U -i 0.2 -c 5 -W 1 ' . escapeshellcmd($host);
 	exec($ping, $saida, $retorno);
 	$saida = array_values(array_filter($saida));
 	$rtt = array_slice($saida, -1)[0];
