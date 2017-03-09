@@ -51,7 +51,7 @@
 					conteudo += '<td>Status</td>';
 					conteudo += '<td>Host</td>';
 					conteudo += '<td>IP</td>';
-					conteudo += '<td>Tempo de resposta</td>';
+					conteudo += '<td>Lat&ecirc;ncia</td>';
 					conteudo += '<td>&Uacute;ltima atualiza&ccedil;&atilde;o</td>';
 					conteudo += '</tr>';
 
@@ -60,7 +60,7 @@
 						destaque = '';
 						unidade = 'ms';
 
-						if (data[i]['Tempo de resposta'] >= latencia_alta) 
+						if (data[i]['Lat&ecirc;ncia'] >= latencia_alta) 
 							status = 'warning';
 
 						if (data[i].Status === 'OFFLINE') {
@@ -73,7 +73,7 @@
 						conteudo += '<td class="' + status + '">' + data[i].Status + '</td>';
 						conteudo += '<td class="' + destaque + '">' + data[i].Host + '</td>';
 						conteudo += '<td class="' + destaque + '">' + data[i].IP + '</td>';
-						conteudo += '<td class="' + destaque + '">' + data[i]['Tempo de resposta'] + unidade + '</td>';
+						conteudo += '<td class="' + destaque + '">' + data[i]['Lat&ecirc;ncia'] + unidade + '</td>';
 						conteudo += '<td class="' + destaque + '">' + data[i]['&Uacute;ltima atualiza&ccedil;&atilde;o'] + '</td>';
 						conteudo += '</tr>';
 					}
