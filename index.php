@@ -119,7 +119,7 @@
 		<table id="tbl"></table>
 	</div>
 	<div class="rodape">
-		php-monitor &copy; 2016 <a href="mailto:smarcell@mail.com">Sandro Marcell</a><br />
+		php-monitor &copy; 2016-<?php echo date('Y'); ?> <a href="https://github.com/sandromarcell">Sandro Marcell</a><br />
 		<?php
 		setlocale(LC_TIME, 'pt_BR.UTF-8');
 		echo '<span class="data">' . strftime('%a, %d de %B de %Y', strtotime('today')) . '</span>';
